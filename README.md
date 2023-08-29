@@ -48,7 +48,9 @@ Response:
 
 A license is required to use Dynamsoft Barcode Reader. You can apply for one [here](https://www.dynamsoft.com/customer/license/trialLicense?product=dbr).
 
+## Blog
 
+[How to Read Barcodes in AWS Lambda with Python](https://www.dynamsoft.com/codepool/read-barcodes-aws-lambda-python.html)
 
 
 
