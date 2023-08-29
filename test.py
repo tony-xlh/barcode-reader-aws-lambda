@@ -12,9 +12,7 @@ def decode():
     body = {"base64": base64}
     json_data = json.dumps(body)
     headers = {'Content-type': 'application/json'}
-    print(json_data)
     r = requests.post('https://toln285pca.execute-api.us-east-2.amazonaws.com/default/BarcodeReader', data=json_data, headers=headers)
-    print(dir(r))
     print(r.json())
 
 
