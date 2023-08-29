@@ -15,21 +15,21 @@ Request:
 Response:
 
 ```json
-{'results': 
+{"results": 
   [
     {
-      'barcodeFormat': 'QR_CODE', 
-      'barcodeText': 'https://www.dynamsoft.com',
-      'barcodeBytes': 'aHR0cHM6Ly93d3cuZHluYW1zb2Z0LmNvbQ==',
-      'confidence': 82,
-      'x1': 7,
-      'y1': 7,
-      'x2': 93,
-      'y2': 6,
-      'x3': 94,
-      'y3': 94,
-      'x4': 6,
-      'y4': 93
+      "barcodeFormat": "QR_CODE", 
+      "barcodeText": "https://www.dynamsoft.com",
+      "barcodeBytes": "aHR0cHM6Ly93d3cuZHluYW1zb2Z0LmNvbQ==",
+      "confidence": 82,
+      "x1": 7,
+      "y1": 7,
+      "x2": 93,
+      "y2": 6,
+      "x3": 94,
+      "y3": 94,
+      "x4": 6,
+      "y4": 93
     }
   ]
 }
