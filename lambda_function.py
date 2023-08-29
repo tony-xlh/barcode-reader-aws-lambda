@@ -20,10 +20,9 @@ def lambda_handler(event, context):
         dbr = BarcodeReader()
         base64_string = event["base64"]
         text_results = dbr.decode_base64_string(base64_string)
-        
+        result_dict = {}
+        results = []
         if text_results != None:
-            result_dict = {}
-            results = []
             for tr in text_results:
                 result = {}
                 result["barcodeFormat"] = tr.barcode_format_string
@@ -40,11 +39,8 @@ def lambda_handler(event, context):
                 result["x4"] = points[3][0]
                 result["y4"] = points[3][1]
                 results.append(result)
-            result_dict["results"] = results
-            return result_dict
-        else:
-            print("No data detected.")
-            return "No data detected."
+        result_dict["results"] = results
+        return json.dumps(result_dict)
     except BarcodeReaderError as bre:
         print(bre)
         return bre.error_info
