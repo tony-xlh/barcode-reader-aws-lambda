@@ -1,16 +1,13 @@
 import json
 import base64
 from dbr import *
-# Sets a directory path for saving the license cache.
-folder_path = "/tmp/my-folder"
-# Create the folder if it doesn't exist
+
+folder_path = "/tmp/dynamsoft"
 if not os.path.exists(folder_path):
     os.makedirs(folder_path)
+# Sets a directory path for saving the license cache.
 BarcodeReader.set_license_cache_path(folder_path)
-# Initialize license.
-# The string "DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9" here is a free public trial license. Note that network connection is required for this license to work.
-# You can also request a 30-day trial license in the customer portal: https://www.dynamsoft.com/customer/license/trialLicense?product=dbr&utm_source=samples&package=python
-error = BarcodeReader.init_license("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9")
+error = BarcodeReader.init_license("DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ==") #one-day public trial
 
 def lambda_handler(event, context):
     try:
