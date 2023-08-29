@@ -18,10 +18,13 @@ def lambda_handler(event, context):
             return ("License error: "+ error[1])
 
         dbr = BarcodeReader()
-        base64_string = event["base64"]
+        request_body = event["body"]
+        base64_string = json.loads(request_body)["base64"]
+
         text_results = dbr.decode_base64_string(base64_string)
         result_dict = {}
         results = []
+
         if text_results != None:
             for tr in text_results:
                 result = {}
@@ -40,7 +43,12 @@ def lambda_handler(event, context):
                 result["y4"] = points[3][1]
                 results.append(result)
         result_dict["results"] = results
-        return json.dumps(result_dict)
+        return {
+            "statusCode": 200,
+            "body": json.dumps(result_dict)
+        }
+        return 
     except BarcodeReaderError as bre:
         print(bre)
         return bre.error_info
+        
