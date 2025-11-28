@@ -40,7 +40,7 @@ Response:
 ## How to Set up the Lambda Function and Add an API Gateway Trigger
 
 1. In your AWS, create a new Lambda function. Choose Python as the runtime.
-2. Create a layer to include the package of Dynamsoft Barcode Reader. You can download the manylinux wheel of Dynamsoft Barcode Reader from [here](https://pypi.org/project/dbr/#files), unzip it into a folder named `python` and package it as a zip for uploading.
+2. Create a layer to include the package of Dynamsoft Barcode Reader. You can download the manylinux wheel of Dynamsoft Barcode Reader from [here](https://pypi.org/project/dynamsoft-barcode-reader-bundle/#files), unzip it into a folder named `python` and package it as a zip for uploading.
 3. Update the `lambda_function.py` file with this repo's.
 4. Create an API gateway trigger for this function so that we can call the function through HTTP requests.
 
