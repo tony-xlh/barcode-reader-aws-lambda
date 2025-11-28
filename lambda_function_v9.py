@@ -1,5 +1,6 @@
 import json
 import base64
+import os
 from dbr import *
 
 folder_path = "/tmp/dynamsoft"
